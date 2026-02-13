@@ -1,0 +1,6 @@
+columnsToEncode =['workclass', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex','native-country','income']
+
+for value in columnsToEncode:
+    df[value] = encoder.fit_transform(df[[value]])
+    
+encoder = OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=np.nan)
